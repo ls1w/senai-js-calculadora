@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>Calculadora-1</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <!-- <h3>CONFIGURANDO O BOOTSTRAP</h3> -->
+            <div class="col-auto bg-secondary p-5 rounded">
+                <h3 class="text-light fw-bold">CALCULADORA</h3>
+                <form onsubmit="return false">
+
+                    <!-- INPUT DO NÚMERO 1 -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="numero01" class="form-lable fw-bold text-light">NÚMERO 1</label>
+                            <input type="number" name="numero01" id="numero01" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <!-- OPERADORES MATEMÁTICOS -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="operador" class="form-lable fw-bold text-light">OPERADOR</label>
+                            <select name="operador" id="operador" class="form-select">
+                                <option value="">Selecione: </option>
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="*">*</option>
+                                <option value="/">/</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- INPUT DO NÚMERO 2 -->
+                    <div class="row">
+                        <div class="col">
+                            <label for="numero02" class="form-lable fw-bold text-light">NÚMERO 2</label>
+                            <input type="number" name="numero02" id="numero02" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <!-- IMAGEM DO OPERADOR -->
+                    <div class="row justify-content-center">
+                        <div class="col align-itens-center mt-2">
+                            <img class="img-thumbnail" id="imgOperacao"/>
+                        </div>
+                    </div>
+
+                    <!-- RESULTADO -->
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label fw-bold text-light">RESULTADO: </label>
+                        </div>
+
+                        <!-- RESULTADO DA OPERAÇÃO MATEMÁTICA -->
+                        <div class="col">
+                            <label class="form-label fw-bold text-light" id="resultado">-</label>
+                        </div>
+                    </div>
+
+                    <!-- BOTÃO DE CALCULAR E BOTÃO DE LIMPAR -->
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-primary mt-2" name="calcular" id="calcular" onclick="somar()">
+                                CALCULAR
+                            </button>
+                        </div>
+
+                        <div class="col">
+                            <button class="btn btn-danger mt-2" name="limpar" id="limpar">
+                                LIMPAR
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    // DECLARAÇÃO DA FUNÇÃO DE SOMAR
+    function somar(){
+        // DECLARAÇÃO DAS VARIÁVEIS
+        let numero01;
+        let numero02;
+        let resultado;
+
+        // ENTRADA DE DADO DO NÚMERO 1
+        numero01 = parseInt(document.querySelector('#numero01').value);
+        numero02 = parseInt(document.querySelector('#numero02').value);
+
+        resultado = numero01 + numero02
+
+        document.querySelector('#resultado').innerHTML = resultado;
+        // alert('Resultado: ' + resultado)
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

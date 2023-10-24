@@ -10,6 +10,7 @@
         document.querySelector('#numero01').value = '';
         document.querySelector('#numero02').value = '';
         document.querySelector('#resultado').innerHTML = '-';
+        imgOperacao.setAttribute('src','')
     }
     
     function calculadora(){

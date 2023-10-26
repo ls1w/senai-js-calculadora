@@ -1,8 +1,8 @@
-    let operador = '';
+let operador = '';
 
-    let numero01;
-    let numero02;
-    let resultado;
+let numero01;
+let numero02;
+let resultado;
 
     // DECLARAÇÃO FUNÇÃO DE LIMPAR
     function limpar() {
